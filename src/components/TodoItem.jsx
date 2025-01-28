@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTodoContext } from "../contexts/todocontext";
+import { format, isToday } from "date-fns";
 
 function TodoItem({ todo }) {
   const { updatedTodo, deleteTodo, togglecompleted } = useTodoContext();
@@ -17,6 +18,11 @@ function TodoItem({ todo }) {
 
   return (
     <>
+      {isToday(new Date(todo.date)) && (
+        <div className="text-center text-sm text-gray-500">
+          {format(new Date(todo.date), "MMMM do, yyyy")}
+        </div>
+      )}
       <div
         className={`flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black ${
           todo.completed ? "bg-[#c6e9a7]" : "bg-[#ccbed7]"

@@ -8,7 +8,7 @@ function App() {
 
   const addTodo = (todo) => {
     setTodos((prev) => [
-      { ...todo, id: Date.now(), completed: false },
+      { ...todo, id: Date.now(), completed: false, date: new Date() },
       ...prev,
     ]);
   };

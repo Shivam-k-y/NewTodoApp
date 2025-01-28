@@ -36,7 +36,7 @@ function TodoForm() {
       <div className="flex mt-4 px-70 ">
         <button
           onClick={() => deleteAll()}
-          className="rounded-lg px-3 py-1 bg-red-600 text-white shrink-0 hover:bg-red-700 cursor-pointer"
+          className="flex  rounded-lg px-3 py-1 bg-red-600 text-white shrink-0 hover:bg-red-700 cursor-pointer"
         >
           All Delete
         </button>
